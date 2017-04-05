@@ -17,21 +17,22 @@ class DesignBox extends Component {
     })
   }
 
-  handleDesignSubmit(design) {
-    let designs = this.state.data;
-    design.id = Date.now();
-    let newDesigns = designs.concat([design]);
-    this.setState({ data: newDesigns });
-    axios.post(this.props.url, design)
-      .catch(err => {
-        console.error(err);
-        this.setState({ data: designs });
-      });
-  }
   componentDidMount() {
     this.loadDesignsFromServer();
     setInterval(this.loadDesignsFromServer, this.props.pollInterval)
   }
+
+  handleDesignSubmit(design) {
+  let designs = this.state.data;
+  design.id = Date.now();
+  let newDesigns = designs.concat([design]);
+  this.setState({ data: newDesigns });
+  axios.post(this.props.url, design)
+    .then(function (response) {
+      console.log(response);
+      this.setState({ data: design });
+    });
+}
 
   render(){
     return(

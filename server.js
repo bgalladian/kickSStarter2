@@ -52,9 +52,8 @@ router.route('/designs')
   //post new design to the database
   .post(function(req, res) {
     var design = new Design();
-    //body parser lets us use the req.body
-    design.designer = req.body.designer;
-    design.text = req.body.text;
+    (req.body.designer) ? design.designer = req.body.designer : null;
+    (req.body.text) ? design.text = req.body.text : null;
 
     design.save(function(err) {
       if (err)
@@ -62,22 +61,35 @@ router.route('/designs')
       res.json({ message: 'Design successfully added!' });
     });
   });
+  router.route("/designs/:design_id")
+    .put(function(req, res) {
+      Design.findById(req.params.design_id, function(err, design) {
+        if (err)
+        res.send(err);
+        (req.body.designer) ? design.designer = req.body.designer : null;
+        (req.body.text) ? design.text = req.body.text : null;
+        design.save(function(err) {
+          if (err)
+          res.send(err);
+          res.json({ message: "Design has been updated" })
+        })
+      })
+    })
+.put(function(req, res) {
+  Design.findById(req.params.design_id, function(err, design) {
+    if (err)
+    res.send(err);
+    res.json({message: 'Design has been updated'})
+  })
+})
 
-  // router.route('/designs/:design_id')
-  //
-  // .put(req, res) => {
-  //   Design.findById(req.params.design_id, (err, design) => {
-  //     if(err)
-  //       res.send(err)
-  //       (req.body.designer) ? design.designer = req.body.designer : null;
-  //       (req.body.text) ? design.text = req.body.text : null;
-  //       design.save( (err) => {
-  //         if(err)
-  //           res.send(err)
-  //         res.json({message: "Design has been updated"})
-  //       })
-  //   })
-  // }
+.delete(function(req, res) {
+  Design.remove({ _id: req.params.design_id}, function(err, design) {
+    if (err)
+    res.send(err);
+    res.json({message: 'Design has been deleted'})
+  })
+})
 //Use our router configuration when we call /api
 app.use('/api', router);
 
