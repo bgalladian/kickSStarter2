@@ -10,16 +10,12 @@ class DesignBox extends Component {
     this.state = { data: [] };
     this.loadDesignsFromServer = this.loadDesignsFromServer.bind(this);
     this.handleDesignSubmit = this.handleDesignSubmit.bind(this);
+    this.handleDesignDelete = this.handleDesignDelete.bind(this);
   }
   loadDesignsFromServer() {
     axios.get(this.props.url).then(res => {
       this.setState({ data: res.data})
     })
-  }
-
-  componentDidMount() {
-    this.loadDesignsFromServer();
-    setInterval(this.loadDesignsFromServer, this.props.pollInterval)
   }
 
   handleDesignSubmit(design) {
@@ -30,15 +26,37 @@ class DesignBox extends Component {
   axios.post(this.props.url, design)
     .then(function (response) {
       console.log(response);
-      this.setState({ data: design });
+      // this.setState({ data: design });
     });
-}
+  }
+
+  handleDesignDelete(id) {
+    axios.delete(`${this.props.url}/${id}`).then(res => {
+      console.log('Design Deleted')
+    }).catch(err => {
+      console.log(err)
+    })
+  }
+
+  handleDesignUpdate(id, design) {
+    axios.put(`${this.props.url}/${id}`, design).catch(err => {
+      console.log(err)
+    })
+  }
+
+  componentDidMount() {
+    this.loadDesignsFromServer();
+    setInterval(this.loadDesignsFromServer, this.props.pollInterval)
+  }
 
   render(){
     return(
-      <div>
+      <div className="designs">
         <h2>Designs:</h2>
-        <DesignList data={ this.state.data }/>
+        <DesignList
+          onDesignDelete={ this.handleDesignDelete }
+          onDesignUpdate={ this.handleDesignUpdate }
+          data={ this.state.data }/>
         <DesignForm onDesignSubmit={this.handleDesignSubmit}/>
       </div>
     )

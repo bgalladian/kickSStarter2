@@ -44,6 +44,7 @@ class DesignForm extends Component {
           onChange={this.handleTextChange } />
         <input
           type='submit'
+          onClick={(e) => this.handleSubmit(e)}
           value="Post" />
       </form>
     )
