@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import DesignList from './DesignList';
 import DesignForm from './DesignForm'
+import './App.css'
 
 
 class DesignBox extends Component {
@@ -54,13 +55,14 @@ class DesignBox extends Component {
 
   render(){
     return(
-      <div className="designs">
+      <div>
+        <DesignForm onDesignSubmit={this.handleDesignSubmit}/>
         <h2>Designs:</h2>
         <DesignList
           onDesignDelete={ this.handleDesignDelete }
           onDesignUpdate={ this.handleDesignUpdate }
           data={ this.state.data }/>
-        <DesignForm onDesignSubmit={this.handleDesignSubmit}/>
+
       </div>
     )
   }

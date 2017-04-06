@@ -54,6 +54,9 @@ router.route('/designs')
     var design = new Design();
     (req.body.designer) ? design.designer = req.body.designer : null;
     (req.body.text) ? design.text = req.body.text : null;
+    (req.body.imageURL) ? design.imageURL = req.body.imageURL : null;
+    (req.body.material) ? design.material = req.body.material : null;
+    (req.body.inspiration) ? design.inspiration = req.body.inspiration : null;
 
     design.save(function(err) {
       if (err)
@@ -68,6 +71,9 @@ router.route('/designs')
         res.send(err);
         (req.body.designer) ? design.designer = req.body.designer : null;
         (req.body.text) ? design.text = req.body.text : null;
+        (req.body.imageURL) ? design.imageURL = req.body.imageURL : null;
+        (req.body.material) ? design.material = req.body.material : null;
+        (req.body.inspiration) ? design.inspiration = req.body.inspiration : null;
         design.save(function(err) {
           if (err)
           res.send(err);

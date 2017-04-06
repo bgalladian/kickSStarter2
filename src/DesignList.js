@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Design from './Design'
+import './App.css'
 
 class DesignList extends Component{
   render() {
@@ -9,6 +10,9 @@ class DesignList extends Component{
             designer={ design.designer }
             uniqueID = { design['_id']}
              text={design.text}
+             imageURL={design.imageURL}
+             material={design.material}
+             inspiration={design.inspiration}
              onDesignDelete={ this.props.onDesignDelete }
              onDesignUpdate={ this.props.onDesignUpdate}
              key={ design['_id']} >
@@ -17,7 +21,7 @@ class DesignList extends Component{
         )
       })
       return (
-        <div>
+        <div className="nodes">
           { designNodes }
         </div>
       )

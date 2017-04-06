@@ -1,3 +1,44 @@
+body {
+  background-color: dodgerblue;
+}
+
+
+h1 {
+  text-align: center;
+}
+img {
+  height: 300px;
+  width: 300px;
+  margin: 0 auto;
+}
+
 form {
+  background-color: red;
+  text-align: center;
+  width: 100%;
+  padding-top: 20px;
+  margin: 0 auto;
+
+}
+
+input {
+  width: 200px;
+  margin: 10px;
   padding: 10px;
+  text-align: center;
+}
+
+textarea {
+  height: 200px;
+  width: 200px;
+  text-align: center;
+}
+
+
+.designs{
+  background-color: white;
+  max-width: 80%;
+  float: right;
+  margin: 10px;
+
 }
