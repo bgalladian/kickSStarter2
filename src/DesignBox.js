@@ -11,9 +11,11 @@ class DesignBox extends Component {
     this.loadDesignsFromServer = this.loadDesignsFromServer.bind(this);
     this.handleDesignSubmit = this.handleDesignSubmit.bind(this);
     this.handleDesignDelete = this.handleDesignDelete.bind(this);
+    this.handleDesignUpdate = this.handleDesignUpdate.bind(this);
   }
   loadDesignsFromServer() {
-    axios.get(this.props.url).then(res => {
+    axios.get(this.props.url)
+    .then(res => {
       this.setState({ data: res.data})
     })
   }
@@ -39,7 +41,8 @@ class DesignBox extends Component {
   }
 
   handleDesignUpdate(id, design) {
-    axios.put(`${this.props.url}/${id}`, design).catch(err => {
+    axios.put(`${this.props.url}/${id}`, design)
+    .catch(err => {
       console.log(err)
     })
   }

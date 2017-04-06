@@ -3,3 +3,8 @@
   border: solid red;
   padding: 10px;
 }
+
+form {
+  padding: 10px;
+  margin: 10px;
+}

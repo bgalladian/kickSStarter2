@@ -9,6 +9,7 @@ class Design extends Component {
       toBeUpdate: false,
       designer: '',
       text: '',
+      imageURL: ''
     }
     this.deleteDesign = this.deleteDesign.bind(this);
     this.updateDesign = this.updateDesign.bind(this);
@@ -57,8 +58,10 @@ render() {
     <div>
       <h3>{this.props.designer}</h3>
       <p>{this.props.text}</p>
-      <a href='#' onClick={ this.updateComment }>update</a>
-      <a href='#' onClick={ this.deleteComment }>delete</a>
+
+
+      <button onClick={ this.updateDesign }>update</button>
+      <button onClick={ this.deleteDesign}>delete</button>
       { (this.state.toBeUpdated)
         ? (<form onSubmit={ this.handleDesignUpdate }>
             <input
@@ -68,7 +71,7 @@ render() {
               onChange= { this.handleDesignerChange } />
             <input
               type='text'
-              placeholder='Update your comment...'
+              placeholder='Update your comment.'
               value={ this.state.text }
               onChange={ this.handleTextChange } />
             <input

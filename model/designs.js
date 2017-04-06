@@ -5,7 +5,8 @@ var Schema = mongoose.Schema;
 
 var DesignsSchema = new Schema ({
   designer: String,
-  text: String
+  text: String,
+  imageURL: String
 })
 
 module.exports = mongoose.model('Design', DesignsSchema)

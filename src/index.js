@@ -6,6 +6,6 @@ import DesignBox from './DesignBox';
 ReactDOM.render(
   <DesignBox
     url="http://localhost:3001/api/designs"
-    pollInterval={2000} />,
+    pollInterval={500} />,
   document.getElementById('root')
 );
