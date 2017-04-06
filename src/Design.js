@@ -79,7 +79,7 @@ render() {
     <div className="main-area">
       <div className="designs">
         <h3>Designer: {this.props.designer}</h3>
-        <strong>Description: </strong>{this.props.text}
+        <p><strong>Name: </strong>{this.props.text}</p>
         <p><strong>Material: </strong>{this.props.material}</p>
         <p><strong>Inspiration: </strong>{this.props.inspiration}</p><br/>
         <img src={this.props.imageURL}></img><br/>
@@ -90,27 +90,27 @@ render() {
           ? (<form onSubmit={ this.handleDesignUpdate }>
               <input
                 type='text'
-                placeholder='Update name...'
+                placeholder='Update Your Name'
                 value={ this.state.designer }
                 onChange= { this.handleDesignerChange } /><br/>
               <input
                 type='text'
-                placeholder='Update your description.'
+                placeholder='Rename Your Kick'
                 value={ this.state.text }
                 onChange={ this.handleTextChange } /><br/>
               <input
                 type='text'
-                placeholder='Update your image'
+                placeholder='Update Your Image'
                 value={ this.state.imageURL }
                 onChange={ this.handleImageURLChange } /><br/>
               <input
                 type='text'
-                placeholder='Update the material'
+                placeholder='Update the Material'
                 value={ this.state.material }
                 onChange={ this.handleMaterialChange } /><br/>
               <input
                 type='text'
-                placeholder='Update your Inspiration Story'
+                placeholder='Update Your Inspiration'
                 value={ this.state.inspiration }
                 onChange={ this.handleInspirationChange } /><br/>
               <input
