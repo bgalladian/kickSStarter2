@@ -38,7 +38,7 @@ class Design extends Component {
    let imageURL = (this.state.imageURL) ? this.state.imageURL : null;
    let material = (this.state.material) ? this.state.material : null;
    let inspiration = (this.state.inspiration) ? this.state.inspiration : null;
-   let design = { designer: designer, text: text};
+   let design = { designer: designer, text: text, imageURL: imageURL, material: material, inspiration: inspiration};
    this.props.onDesignUpdate(id, design);
    this.setState({
      toBeUpdated: !this.state.toBeUpdated,
@@ -76,47 +76,50 @@ class Design extends Component {
 
 render() {
   return (
-    <div className="designs">
-      <h3>Designer: {this.props.designer}</h3>
-      <p><strong>Description: </strong>{this.props.text}</p>
-      <p><strong>Material: </strong>{this.props.material}</p>
-      <p><strong>Inspiration: </strong>{this.props.inspiration}</p><br/>
-      <img src={this.props.imageURL}></img><br/>
-      <button onClick={ this.updateDesign }>Update</button>
-      <button onClick={ this.deleteDesign}>Delete</button>
-      { (this.state.toBeUpdated)
-        ? (<form onSubmit={ this.handleDesignUpdate }>
-            <input
-              type='text'
-              placeholder='Update name...'
-              value={ this.state.designer }
-              onChange= { this.handleDesignerChange } />
-            <input
-              type='text'
-              placeholder='Update your description.'
-              value={ this.state.text }
-              onChange={ this.handleTextChange } />
-            <input
-              type='text'
-              placeholder='Update your image'
-              value={ this.state.imageURL }
-              onChange={ this.handleImageURLChange } />
-            <input
-              type='text'
-              placeholder='Update the material'
-              value={ this.state.material }
-              onChange={ this.handleMaterialChange } />
-            <input
-              type='text'
-              placeholder='Update your Inspiration Story'
-              value={ this.state.inspiration }
-              onChange={ this.handleInspirationChange } />
-            <input
-              type='submit'
-              value='Update' />
-          </form>)
-        : null}
-    </div>
+    <div className="main-area">
+      <div className="designs">
+        <h3>Designer: {this.props.designer}</h3>
+        <strong>Description: </strong>{this.props.text}
+        <p><strong>Material: </strong>{this.props.material}</p>
+        <p><strong>Inspiration: </strong>{this.props.inspiration}</p><br/>
+        <img src={this.props.imageURL}></img><br/>
+        <button onClick={ this.updateDesign }>Update</button>
+        <button onClick={ this.deleteDesign}>Delete</button>
+
+        { (this.state.toBeUpdated)
+          ? (<form onSubmit={ this.handleDesignUpdate }>
+              <input
+                type='text'
+                placeholder='Update name...'
+                value={ this.state.designer }
+                onChange= { this.handleDesignerChange } /><br/>
+              <input
+                type='text'
+                placeholder='Update your description.'
+                value={ this.state.text }
+                onChange={ this.handleTextChange } /><br/>
+              <input
+                type='text'
+                placeholder='Update your image'
+                value={ this.state.imageURL }
+                onChange={ this.handleImageURLChange } /><br/>
+              <input
+                type='text'
+                placeholder='Update the material'
+                value={ this.state.material }
+                onChange={ this.handleMaterialChange } /><br/>
+              <input
+                type='text'
+                placeholder='Update your Inspiration Story'
+                value={ this.state.inspiration }
+                onChange={ this.handleInspirationChange } /><br/>
+              <input
+                type='submit'
+                value='Update' />
+            </form>)
+          : null}
+          </div>
+  </div>
   )
 }
 }

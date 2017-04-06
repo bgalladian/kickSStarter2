@@ -1,44 +1,56 @@
 body {
-  background-color: dodgerblue;
+  background-image: url(./images/sneakers.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Arvo', serif;
 }
 
+.logo {
+  margin: auto;
+  width: 50%
+}
 
-h1 {
+h1, h2 {
   text-align: center;
 }
-img {
+.designs img {
   height: 300px;
   width: 300px;
   margin: 0 auto;
 }
 
 form {
-  background-color: red;
+  float: left;
   text-align: center;
-  width: 100%;
   padding-top: 20px;
   margin: 0 auto;
-
+  align-items: center;
 }
+
+li {
+  list-style: none
+}
+
 
 input {
   width: 200px;
+  height: 5px;
   margin: 10px;
   padding: 10px;
   text-align: center;
 }
 
-textarea {
-  height: 200px;
-  width: 200px;
-  text-align: center;
-}
-
-
 .designs{
-  background-color: white;
-  max-width: 80%;
-  float: right;
+  background-image: url(./images/wallpaper.jpg);
+  max-width: 30%;
+  float: left;
   margin: 10px;
+  padding: 10px;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
 }

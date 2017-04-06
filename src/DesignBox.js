@@ -57,7 +57,7 @@ class DesignBox extends Component {
     return(
       <div>
         <DesignForm onDesignSubmit={this.handleDesignSubmit}/>
-        <h2>Designs:</h2>
+        <h2>Designs</h2>
         <DesignList
           onDesignDelete={ this.handleDesignDelete }
           onDesignUpdate={ this.handleDesignUpdate }

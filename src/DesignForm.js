@@ -39,6 +39,7 @@ class DesignForm extends Component {
    let material = this.state.material.trim();
    let inspiration = this.state.inspiration.trim();
    if (!text || !designer) {
+     alert('Please Enter Your Name and the Design Name')
      return;
    }
    this.props.onDesignSubmit({ designer: designer, text: text, imageURL: imageURL, material: material, inspiration: inspiration})
@@ -49,6 +50,7 @@ class DesignForm extends Component {
     return(
       <form className="addForm">
         <h3><strong>Add your kick!</strong></h3>
+
         <input
           type='text'
           placeholder='Your Name'
@@ -56,7 +58,7 @@ class DesignForm extends Component {
           onChange={this.handleDesignerChange } />
         <input
           type='text'
-          placeholder='Describe Your Kick'
+          placeholder='Name Your Design'
           value={ this.state.text }
           onChange={this.handleTextChange } />
         <input
