@@ -76,7 +76,7 @@ class Design extends Component {
 
 render() {
   return (
-    <div className="main-area">
+    <div >
       <div className="designs">
         <h3>Designer: {this.props.designer}</h3>
         <p><strong>Name: </strong>{this.props.text}</p>

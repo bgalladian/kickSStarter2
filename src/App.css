@@ -20,15 +20,21 @@ h1, h2 {
   text-align: center;
 }
 .designs img {
-  height: 300px;
-  width: 300px;
+  height: 200px;
+  width: 200px;
   margin: 0 auto;
 }
 
+.addForm{
+  background-color: rgba(125, 125, 125, 0.2);
+}
+
 form {
+  border: solid black;
+  border-radius: 20%;
   float: left;
   text-align: center;
-  padding-top: 20px;
+  padding-top: 30px;
   margin: 0 auto;
   align-items: center;
 }
@@ -50,11 +56,16 @@ input {
   background-image: url(./images/wallpaper.jpg);
   max-width: 30%;
   float: left;
-  margin: 10px;
+  margin: auto;
+  margin-left: 20px;
+  width: 50%;
   padding: 10px;
   max-height: 100%;
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
+
   justify-content: space-between;
+  border-radius: 20px;
 
 }
