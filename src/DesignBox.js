@@ -55,14 +55,14 @@ class DesignBox extends Component {
 
   render(){
     return(
-      <div>
+      <div >
         <DesignForm onDesignSubmit={this.handleDesignSubmit}/>
-        <h2>Designs</h2>
+        <div className="mainarea">
         <DesignList
           onDesignDelete={ this.handleDesignDelete }
           onDesignUpdate={ this.handleDesignUpdate }
           data={ this.state.data }/>
-
+      </div>
       </div>
     )
   }

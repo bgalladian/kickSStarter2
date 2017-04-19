@@ -16,7 +16,7 @@ body {
   text-align: center;
 }
 
-h1, h2 {
+h1, h2, h3 {
   text-align: center;
 }
 .designs img {
@@ -27,11 +27,15 @@ h1, h2 {
 
 .addForm{
   background-color: rgba(125, 125, 125, 0.2);
+  margin: 25px;
+  height: 450px;
+  width: 360px;
+
 }
 
 form {
   border: solid black;
-  border-radius: 20%;
+  border-radius: 20px;
   float: left;
   text-align: center;
   padding-top: 30px;
@@ -56,7 +60,7 @@ input {
   background-image: url(./images/wallpaper.jpg);
   max-width: 30%;
   float: left;
-  margin: auto;
+  margin: 20px auto;
   margin-left: 20px;
   width: 50%;
   padding: 10px;
@@ -64,8 +68,6 @@ input {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-
   justify-content: space-between;
   border-radius: 20px;
-
 }

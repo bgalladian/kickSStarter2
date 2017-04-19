@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DesignList from './DesignList'
 import './App.css'
 
 
@@ -76,7 +77,8 @@ class Design extends Component {
 
 render() {
   return (
-    <div >
+    <div>
+      
       <div className="designs">
         <h3>Designer: {this.props.designer}</h3>
         <p><strong>Name: </strong>{this.props.text}</p>
@@ -120,7 +122,7 @@ render() {
           : null}
           </div>
   </div>
-  )
-}
+    )
+  }
 }
 export default Design;

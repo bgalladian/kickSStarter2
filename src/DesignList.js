@@ -21,7 +21,7 @@ class DesignList extends Component{
         )
       })
       return (
-        <div className="nodes">
+        <div>          
           { designNodes }
         </div>
       )
