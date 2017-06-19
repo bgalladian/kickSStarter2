@@ -77,8 +77,9 @@ class Design extends Component {
 
 render() {
   return (
+
     <div>
-      
+
       <div className="designs">
         <h3>Designer: {this.props.designer}</h3>
         <p><strong>Name: </strong>{this.props.text}</p>
@@ -90,29 +91,34 @@ render() {
 
         { (this.state.toBeUpdated)
           ? (<form onSubmit={ this.handleDesignUpdate }>
+            <p>Designer:</p>
               <input
                 type='text'
-                placeholder='Update Your Name'
+                placeholder={this.props.designer}
                 value={ this.state.designer }
                 onChange= { this.handleDesignerChange } /><br/>
+              <p>Name of Design:</p>
               <input
                 type='text'
-                placeholder='Rename Your Kick'
+                placeholder={this.props.text}
                 value={ this.state.text }
                 onChange={ this.handleTextChange } /><br/>
+              <p>Image URL:</p>
               <input
                 type='text'
-                placeholder='Update Your Image'
+                placeholder={this.props.imageURL}
                 value={ this.state.imageURL }
                 onChange={ this.handleImageURLChange } /><br/>
+              <p>Material:</p>
               <input
                 type='text'
-                placeholder='Update the Material'
+                placeholder={this.props.material}
                 value={ this.state.material }
                 onChange={ this.handleMaterialChange } /><br/>
+              <p>Inspiration:</p>
               <input
                 type='text'
-                placeholder='Update Your Inspiration'
+                placeholder={this.props.inspiration}
                 value={ this.state.inspiration }
                 onChange={ this.handleInspirationChange } /><br/>
               <input

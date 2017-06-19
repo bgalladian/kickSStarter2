@@ -56,6 +56,7 @@ class DesignBox extends Component {
   render(){
     return(
       <div >
+        
         <DesignForm onDesignSubmit={this.handleDesignSubmit}/>
         <div className="mainarea">
         <DesignList
